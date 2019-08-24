@@ -66,3 +66,4 @@ node_modules/
 
 venv_bootcamp/
 staticfiles
+venv/
