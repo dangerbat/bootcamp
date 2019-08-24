@@ -5,7 +5,7 @@ Base settings to build other settings files upon.
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (bootcamp/config/settings/base.py - 3 = bootcamp/)
-APPS_DIR = ROOT_DIR.path('bootcamp')
+APPS_DIR = ROOT_DIR.path('applications')
 
 env = environ.Env()
 env.read_env(str(ROOT_DIR.path('.env')))
@@ -81,14 +81,14 @@ THIRD_PARTY_APPS = [
     'taggit',
 ]
 LOCAL_APPS = [
-    'bootcamp.users.apps.UsersConfig',
+    'applications.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'bootcamp.articles.apps.ArticlesConfig',
-    'bootcamp.messager.apps.MessagerConfig',
-    'bootcamp.news.apps.NewsConfig',
-    'bootcamp.notifications.apps.NotificationsConfig',
-    'bootcamp.qa.apps.QaConfig',
-    'bootcamp.search.apps.SearchConfig'
+    'applications.articles.apps.ArticlesConfig',
+    'applications.messager.apps.MessagerConfig',
+    'applications.news.apps.NewsConfig',
+    'applications.notifications.apps.NotificationsConfig',
+    'applications.qa.apps.QaConfig',
+    'applications.search.apps.SearchConfig'
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -97,7 +97,7 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
 MIGRATION_MODULES = {
-    'sites': 'bootcamp.contrib.sites.migrations'
+    'sites': 'applications.contrib.sites.migrations'
 }
 
 # AUTHENTICATION
@@ -248,9 +248,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = 'bootcamp.users.adapters.AccountAdapter'
+ACCOUNT_ADAPTER = 'applications.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = 'bootcamp.users.adapters.SocialAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'applications.users.adapters.SocialAccountAdapter'
 
 
 # Your stuff...
@@ -273,5 +273,5 @@ CHANNEL_LAYERS = {
 
 # GraphQL settings
 GRAPHENE = {
-    'SCHEMA': 'bootcamp.schema.schema'
+    'SCHEMA': 'applications.schema.schema'
 }

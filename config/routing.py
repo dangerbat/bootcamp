@@ -4,8 +4,8 @@ from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.security.websocket import AllowedHostsOriginValidator
 
-from bootcamp.messager.consumers import MessagerConsumer
-from bootcamp.notifications.consumers import NotificationsConsumer
+from applications.messager.consumers import MessagerConsumer
+from applications.notifications.consumers import NotificationsConsumer
 # from bootcamp.notifications.routing import notifications_urlpatterns
 # from bootcamp.messager.routing import messager_urlpatterns
 
